@@ -8,11 +8,11 @@ import scala.scalajs.js.|
 
 @JSExportAll
 case class AutoDetectRendererOptions(
-  view: js.UndefOr[dom.html.Canvas],
-  transparent: js.UndefOr[Boolean],
-  antialias: js.UndefOr[Boolean],
-  preserveDrawingBuffer: js.UndefOr[Boolean],
-  resolution: js.UndefOr[Int]
+  view: dom.html.Canvas = Pixi.DEFAULT_RENDER_OPTIONS.view,
+  transparent: Boolean = Pixi.DEFAULT_RENDER_OPTIONS.transparent,
+  antialias: Boolean = Pixi.DEFAULT_RENDER_OPTIONS.antialias,
+  preserveDrawingBuffer: Boolean = Pixi.DEFAULT_RENDER_OPTIONS.preserveDrawingBuffer,
+  resolution: Int = Pixi.DEFAULT_RENDER_OPTIONS.resolution
 )
 
 @js.native
