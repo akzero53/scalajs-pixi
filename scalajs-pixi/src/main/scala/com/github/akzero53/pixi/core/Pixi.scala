@@ -18,6 +18,8 @@ case class AutoDetectRendererOptions(
 @js.native
 @JSName("PIXI")
 object Pixi extends js.Object {
+
+  @js.native
   object BLEND_MODES extends js.Object {
     val NORMAL: Int = js.native
     val ADD: Int = js.native
@@ -38,6 +40,7 @@ object Pixi extends js.Object {
     val LUMINOSITY: Int = js.native
   }
 
+  @js.native
   object DEFAULT_RENDER_OPTIONS extends js.Object {
     val view: dom.html.Canvas = js.native
     val resolution: Int = js.native
@@ -53,6 +56,7 @@ object Pixi extends js.Object {
 
   val DEG_TO_RAD: Double = js.native
 
+  @js.native
   object DRAW_MODES extends js.Object {
     val POINTS: Int = js.native
     val LINES: Int = js.native
@@ -65,6 +69,7 @@ object Pixi extends js.Object {
 
   val FILTER_RESOLUTION: Int = js.native
 
+  @js.native
   object GC_MODES extends js.Object {
     val DEFAULT: Int = js.native
     val AUTO: Int = js.native
@@ -77,6 +82,7 @@ object Pixi extends js.Object {
 
   val PI_2: Double = js.native
 
+  @js.native
   object PRECISION extends js.Object {
     val DEFAULT: Int = js.native
     val LOW: Int = js.native
@@ -86,6 +92,7 @@ object Pixi extends js.Object {
 
   val RAD_TO_DEG: Double = js.native
 
+  @js.native
   object RENDERER_TYPE extends js.Object {
     val UNKNOWN: Int = js.native
     val WEBGL: Int = js.native
@@ -96,12 +103,14 @@ object Pixi extends js.Object {
 
   val RETINA_PREFIXRegExp: String = js.native
 
+  @js.native
   object SCALE_MODES extends js.Object {
     val DEFAULT: Int = js.native
     val LINEAR: Int = js.native
     val NEAREST: Int = js.native
   }
 
+  @js.native
   object SHAPES extends js.Object {
     val POLY: Int = js.native
     val RECT: Int = js.native
@@ -116,11 +125,13 @@ object Pixi extends js.Object {
 
   val TARGET_FPMS: Int = js.native
 
+  @js.native
   object TEXT_GRADIENT extends js.Object {
     val LINEAR_VERTICAL: Int = js.native
     val LINEAR_HORIZONTAL: Int = js.native
   }
 
+  @js.native
   object TRANSFORM_MODE extends js.Object {
     val DEFAULT: Int = js.native
     val STATIC: Int = js.native
@@ -129,6 +140,7 @@ object Pixi extends js.Object {
 
   val VERSION: String = js.native
 
+  @js.native
   object WRAP_MODES extends js.Object {
     val DEFAULT: Double = js.native
     val CLAMP: Double = js.native
