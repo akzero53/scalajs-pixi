@@ -48,7 +48,7 @@ object Pixi extends js.Object {
     val forceFXAA: Boolean = js.native
     val autoResize: Boolean = js.native
     val transparent: Boolean = js.native
-    val backgroundColor: Boolean = js.native
+    val backgroundColor: Int = js.native
     val clearBeforeRender: Boolean = js.native
     val preserveDrawingBuffer: Boolean = js.native
     val roundPixels: Boolean = js.native
