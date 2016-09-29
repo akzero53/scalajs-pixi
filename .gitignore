@@ -1,0 +1,4 @@
+target/
+.idea/
+server/src/main/public/index.html
+server/src/main/public/js/
