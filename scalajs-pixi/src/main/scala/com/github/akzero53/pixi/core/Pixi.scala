@@ -3,17 +3,17 @@ package com.github.akzero53.pixi.core
 import org.scalajs.dom
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation.{JSExportAll, JSName}
+import scala.scalajs.js.annotation.{ JSExportAll, JSName }
 import scala.scalajs.js.|
 
 @JSExportAll
 case class AutoDetectRendererOptions(
-                                    view: js.UndefOr[dom.html.Canvas],
-                                    transparent: js.UndefOr[Boolean],
-                                    antialias: js.UndefOr[Boolean],
-                                    preserveDrawingBuffer: js.UndefOr[Boolean],
-                                    resolution: js.UndefOr[Int]
-                                    )
+  view: js.UndefOr[dom.html.Canvas],
+  transparent: js.UndefOr[Boolean],
+  antialias: js.UndefOr[Boolean],
+  preserveDrawingBuffer: js.UndefOr[Boolean],
+  resolution: js.UndefOr[Int]
+)
 
 @js.native
 @JSName("PIXI")
@@ -84,8 +84,6 @@ object Pixi extends js.Object {
     val HIGH: Int = js.native
   }
 
-
-
   val RAD_TO_DEG: Double = js.native
 
   object RENDERER_TYPE extends js.Object {
@@ -114,7 +112,7 @@ object Pixi extends js.Object {
 
   val SPRITE_BATCH_SIZE: Int = js.native
 
-  val SPRITE_MAX_TEXTURES: Int = js.native  
+  val SPRITE_MAX_TEXTURES: Int = js.native
 
   val TARGET_FPMS: Int = js.native
 
@@ -122,7 +120,7 @@ object Pixi extends js.Object {
     val LINEAR_VERTICAL: Int = js.native
     val LINEAR_HORIZONTAL: Int = js.native
   }
-  
+
   object TRANSFORM_MODE extends js.Object {
     val DEFAULT: Int = js.native
     val STATIC: Int = js.native
