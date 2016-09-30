@@ -42,13 +42,6 @@ class WebGLRenderer(
   override def destroy(removeView: js.UndefOr[Boolean] = js.undefined): Unit = js.native
   def flush(): Unit = js.native
   override def generateTexture(displayObject: DisplayObject, scaleMode: Int, resolution: Double): Texture = js.native
-  def render(
-    displayObject: DisplayObject,
-    renderTexture: RenderTexture,
-    clear: js.UndefOr[Boolean] = js.undefined,
-    transform: js.UndefOr[Transform] = js.undefined,
-    skipUpdateTransform: js.UndefOr[Boolean] = js.undefined
-  ): Unit = js.native
   def reset(): Unit = js.native
   override def resize(width: Double, height: Double): Unit = js.native
   def setBlendMode(blendMode: Int): Unit = js.native

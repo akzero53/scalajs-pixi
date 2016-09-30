@@ -29,12 +29,5 @@ class CanvasRenderer(
 
   override def destroy(removeView: js.UndefOr[Boolean] = js.undefined): Unit = js.native
   override def generateTexture(displayObject: DisplayObject, scaleMode: Int, resolution: Double): Texture = js.native
-  def render(
-    displayObject: DisplayObject,
-    renderTexture: js.UndefOr[RenderTexture] = js.undefined,
-    clear: js.UndefOr[Boolean] = js.undefined,
-    transform: js.UndefOr[Transform] = js.undefined,
-    skipUpdateTransform: js.UndefOr[Boolean] = js.undefined
-  ): Unit = js.native
   override def resize(width: Double, height: Double): Unit = js.native
 }

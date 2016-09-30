@@ -21,7 +21,7 @@ class SystemRenderer(
     _width: js.UndefOr[Double] = js.undefined,
     _height: js.UndefOr[Double] = js.undefined,
     options: js.UndefOr[SystemRendererOptions] = js.undefined
-) extends js.Object {
+) extends Renderable {
   var autoResize: Boolean = js.native
   var backgroundColor: Int = js.native
   var blendModes: Int = js.native
