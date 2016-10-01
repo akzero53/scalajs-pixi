@@ -1,7 +1,9 @@
 package com.github.akzero53.pixi.core
 
 import scala.scalajs.js
+import scala.scalajs.js.annotation.JSName
 
+@JSName("PIXI.Container")
 @js.native
 class Container extends DisplayObject {
   def children: js.Array[DisplayObject] = js.native

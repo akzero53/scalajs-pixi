@@ -3,6 +3,7 @@ package com.github.akzero53.pixi.core
 import org.scalajs.dom
 
 import scala.scalajs.js
+import scala.scalajs.js.annotation.JSName
 
 case class SystemRendererOptions(
   view: dom.html.Canvas = Pixi.DEFAULT_RENDER_OPTIONS.view,
@@ -15,6 +16,7 @@ case class SystemRendererOptions(
   roundPixels: Boolean = Pixi.DEFAULT_RENDER_OPTIONS.roundPixels
 )
 
+@JSName("PIXI.SystemRenderer")
 @js.native
 class SystemRenderer(
     system: String,

@@ -4,7 +4,6 @@ import org.scalajs.dom
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.{ JSExportAll, JSName }
-import scala.scalajs.js.|
 
 @JSExportAll
 case class AutoDetectRendererOptions(
@@ -147,5 +146,25 @@ object Pixi extends js.Object {
     val REPEAT: Double = js.native
   }
 
-  def autoDetectRenderer(width: Double, height: Double, options: js.UndefOr[AutoDetectRendererOptions], noWebGL: js.UndefOr[Boolean]): WebGLRenderer | CanvasRenderer = js.native
+  def autoDetectRenderer(
+    width: js.UndefOr[Double] = js.undefined,
+    height: js.UndefOr[Double] = js.undefined,
+    options: js.UndefOr[AutoDetectRendererOptions] = js.undefined,
+    noWebGL: js.UndefOr[Boolean] = js.undefined
+  ): SystemRenderer = js.native
+
+  @js.native
+  object utils extends js.Object {
+    var _saidHello: Boolean = js.native
+    //    var sayHello: ??? = js.native
+
+    def getResolutionOfUrl(url: String): Double = js.native
+    def hex2rgb(hex: Int, out: js.UndefOr[js.Array[Int]] = js.undefined): js.Array[Int] = js.native
+    def hex2string(hex: Int): String = js.native
+    def isWebGLSupported(): Boolean = js.native
+    def removeItems(arr: js.Array[js.Any], startIdx: Int, removeCount: Int): Unit = js.native
+    def rgb2hex(rgb: js.Array[Int]): Int = js.native
+    def sign(n: Double): Int = js.native
+    def uid(): Int = js.native
+  }
 }

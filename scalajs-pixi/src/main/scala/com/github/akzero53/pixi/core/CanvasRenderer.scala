@@ -3,7 +3,7 @@ package com.github.akzero53.pixi.core
 import org.scalajs.dom
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation.JSExportAll
+import scala.scalajs.js.annotation.{ JSExportAll, JSName }
 
 @JSExportAll
 case class CanvasRendererOptions(
@@ -16,6 +16,7 @@ case class CanvasRendererOptions(
   roundPixels: Boolean = Pixi.DEFAULT_RENDER_OPTIONS.roundPixels
 )
 
+@JSName("PIXI.CanvasRenderer")
 @js.native
 class CanvasRenderer(
     _width: js.UndefOr[Double] = js.undefined,

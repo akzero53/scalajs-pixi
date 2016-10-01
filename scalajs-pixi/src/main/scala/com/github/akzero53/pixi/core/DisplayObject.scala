@@ -1,8 +1,10 @@
 package com.github.akzero53.pixi.core
 
 import scala.scalajs.js
+import scala.scalajs.js.annotation.JSName
 import scala.scalajs.js.|
 
+@JSName("PIXI.DisplayObject")
 @js.native
 class DisplayObject extends interaction.interactiveTarget with EventEmitter {
   var alpha: Double = js.native

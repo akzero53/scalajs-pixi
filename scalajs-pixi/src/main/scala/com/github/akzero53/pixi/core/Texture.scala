@@ -3,8 +3,10 @@ package com.github.akzero53.pixi.core
 import org.scalajs.dom
 
 import scala.scalajs.js
+import scala.scalajs.js.annotation.JSName
 import scala.scalajs.js.|
 
+@JSName("PIXI.Texture")
 @js.native
 class Texture extends EventEmitter {
   var _frame: Rectangle = js.native
@@ -22,6 +24,7 @@ class Texture extends EventEmitter {
   def update(): Unit = js.native
 }
 
+@JSName("PIXI.Texture")
 @js.native
 object Texture extends js.Object {
   val EMPTY: BaseTexture = js.native

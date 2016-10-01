@@ -3,7 +3,7 @@ package com.github.akzero53.pixi.core
 import org.scalajs.dom
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation.JSExportAll
+import scala.scalajs.js.annotation.{ JSExportAll, JSName }
 
 @JSExportAll
 case class WebGLRendererOptions(
@@ -18,6 +18,7 @@ case class WebGLRendererOptions(
   roundPixels: Boolean = Pixi.DEFAULT_RENDER_OPTIONS.roundPixels
 )
 
+@JSName("PIXI.WebGLRenderer")
 @js.native
 class WebGLRenderer(
     _width: js.UndefOr[Double] = js.undefined,

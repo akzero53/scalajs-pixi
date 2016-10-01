@@ -3,8 +3,10 @@ package com.github.akzero53.pixi.core
 import org.scalajs.dom
 
 import scala.scalajs.js
+import scala.scalajs.js.annotation.JSName
 import scala.scalajs.js.|
 
+@JSName("PIXI.BaseTexture")
 @js.native
 class BaseTexture extends EventEmitter {
   def hasLoaded: Boolean = js.native
