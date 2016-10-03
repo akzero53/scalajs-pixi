@@ -25,8 +25,10 @@ lazy val scalaJsPixi = projectFactory.createSubProject("scalajs-pixi")
 lazy val client = projectFactory.createSubProject("client")
   .settings(ScalaJSSettings.createPlayScalaJsSettings("ScalaJS - Play / Hello World", server))
   .settings(libraryDependencies ++= Seq(
-    Dependencies.scalaJsDom.value
+    Dependencies.scalaJsDom.value,
+    Dependencies.scalaJsReact.value
   ))
+  .settings(jsDependencies ++= Dependencies.scalaJsReactJsDeps)
   .dependsOn(scalaJsPixi)
   .enablePlugins(ScalaJSPlugin)
 
