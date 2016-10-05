@@ -13,23 +13,23 @@ object ReactDrawingTool {
   class Backend($: BackendScope[Props, State]) {
     private val renderer = Pixi.autoDetectRenderer()
     private val container = new Container
+    private val graphics = new Graphics
     private val texture = Texture.fromImage("http://www.goodboydigital.com/wp-content/uploads/2016/04/v4Wide.jpg")
-    texture.once("update", () => resize.runNow())
+    texture.baseTexture.once("loaded", () => resize.runNow())
     private val pixiV4Sprite = new Sprite(texture)
 
     lazy val animate: () => Unit = () => {
       ($.modState(_.copy(token = Some(Animation.requestAnimationFrame(animate)))) >> $.props >>= { (props: Props) =>
-        Callback {
-          val margin = props.margin
-          renderer.resize(margin * 2 + pixiV4Sprite.width, margin * 2 + pixiV4Sprite.height)
-          if (pixiV4Sprite.x > margin * 2 + pixiV4Sprite.width) {
-            pixiV4Sprite.x = -pixiV4Sprite.width
-          }
-          if (pixiV4Sprite.y > margin * 2 + pixiV4Sprite.height) {
-            pixiV4Sprite.y = -pixiV4Sprite.height
-          }
-          pixiV4Sprite.x += 1
-          pixiV4Sprite.y += 3
+        resize >> Callback {
+          //          val margin = props.margin
+          //          if (pixiV4Sprite.x > margin * 2 + pixiV4Sprite.width) {
+          //            pixiV4Sprite.x = -pixiV4Sprite.width
+          //          }
+          //          if (pixiV4Sprite.y > margin * 2 + pixiV4Sprite.height) {
+          //            pixiV4Sprite.y = -pixiV4Sprite.height
+          //          }
+          //          pixiV4Sprite.x += 1
+          //          pixiV4Sprite.y += 3
           renderer.render(container)
         }
       }).runNow()
@@ -52,13 +52,21 @@ object ReactDrawingTool {
 
     def toggleAnimating: Callback = $.state >>= ((state: State) => if (state.animating) animationStop else animationStart)
 
-    def init: Callback = refreshViewDom >> update
+    def init: Callback = refreshViewDom >> update >> $.props >>= { (props) =>
+      Callback {
+        pixiV4Sprite.x = props.margin
+        pixiV4Sprite.y = props.margin
+        graphics.x = props.margin
+        graphics.y = props.margin
+      }
+    }
 
     def deinit: Callback = animationStop
 
     def update: Callback = refreshViewDom >> Callback {
       container.removeChildren()
       container.addChild(pixiV4Sprite)
+      container.addChild(graphics)
     }
   }
 
@@ -68,7 +76,7 @@ object ReactDrawingTool {
     .renderPS { ($, props, state) =>
       <.div(
         <.div(^.id := viewId),
-        <.button("start/stop", ^.onClick --> $.backend.toggleAnimating)
+        <.button(if (state.animating) "stop" else "start", ^.onClick --> $.backend.toggleAnimating)
       )
     }
     .componentDidMount(_.backend.init)
